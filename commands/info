@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "bashbot: a simple bot written almost entirely in bash.  you can find the source at http://github.com/joshcartwright/bashbot"
+echo "bashbot: a simple bot written almost entirely in bash.  you can find the source at https://github.com/joshcartwright/bashbot"
 
 [ -d .git ] && {
    echo -n "... working directory currently at commit ";
