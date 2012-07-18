@@ -1,4 +1,4 @@
-== bashbot - simple damn simple IRC bot ==
+== bashbot - damn simple IRC bot ==
 
 Bashbot is a simple bot written entirely in bash.  I've written it such
 that the addition of commands is simple, and language agnostic (any executable
