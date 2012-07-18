@@ -105,7 +105,8 @@ done
 
 CHANNEL=
 NAME=
-export CHANNEL NAME
+BOTNICK=$nick
+export CHANNEL NAME BOTNICK
 
 while read -r line; do
 
