@@ -5,7 +5,7 @@ that the addition of commands is simple, and language agnostic (any executable
 script/file can be used as a command).  The use of 'filters' is also supported
 (see below).
 
-Note: bashbot has not been auditted for insecurities...its main deployment is
+Note: bashbot has not been audited for insecurities...its main deployment is
 on an IRC server where I trust all of the users.
 
 == getting started ==
