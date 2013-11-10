@@ -23,7 +23,7 @@
 	nick=bashbot
 	server=irc.freenode.net
 	port=6667
-	chans=( "#bottest" )
+	chans=( "#moep80211" )
 EOF
 
 source bashbot.config
@@ -142,6 +142,11 @@ while read -r line; do
       prefix="PRIVMSG $CHANNEL :$NAME"
       set -- "${@:4}"
       ;;
+   "PRIVMSG "*" :!"*)
+      CHANNEL=$2
+      prefix="PRIVMSG $CHANNEL :$NAME"
+      set -- "${@:4}"
+      ;;
    "PRIVMSG "*" :"*)
       CHANNEL=$2
       run_filters "${3#:}" "${@:4}" | while IFS= read -r line; do
@@ -171,6 +176,10 @@ while read -r line; do
    if [ -n "${builtin_commands[$cmd]}" ]; then
       "${builtin_commands[$cmd]}" "$@"
       continue
+   elif [ "$cmd" == "set" ]; then
+      builtin_memory[pm_reply]=yes
+   elif [ "$cmd" == "get" ]; then
+      echo ${builtin_memory[pm_reply]}
    elif [ -x "commands/$cmd" ]; then
       "commands/$cmd" "$@"
    else

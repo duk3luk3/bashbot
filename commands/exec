@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+out=$(eval $*)
+#echo $out
+#$out=$(eval echo $*)
+
+while read -r line; do
+  echo $line
+  sleep 0.5
+done <<< "$out"
